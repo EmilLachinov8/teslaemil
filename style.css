@@ -58,9 +58,7 @@
   opacity: 1;
 }
 
-.menu__item:hover::after,
-.menu_corner__item:hover::after,
-.menu_corner__enter:hover::after {
+.menu__item:hover::after {
   position: absolute;
   display: block;
   content: "";
