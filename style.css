@@ -10,23 +10,23 @@
   display: flex;
   justify-content: space-between;
   width: 94%;
+  height: 18vh;
   margin: auto;
 }
 
 .logo {
   display: inline-block;
   width: 166px;
-  height: 51px;
-  margin: 0.5% 0 4% 0;
-  background: no-repeat url(img/teslamark.svg);
+  height: 48px;
+  margin: 2% 18% 4% 0;
+  background: url(img/teslamark.svg) 0% 100%;
 }
 
 .menu {
   display: inline-block;
   align-items: center;
   width: 50vw;
-  margin: 1.7% 0 0 18%;
-  font: 600 15px/18px 'montserratbold', sans-serif;
+  margin: 3% 0 0 0;
 }
 
 .menu__item {
@@ -53,8 +53,8 @@
 }
 
 .menu__item:hover,
-.menu_corner__item:hover,
-.menu_corner__enter:hover {
+.menu-corner__item:hover,
+.menu-corner__enter:hover {
   opacity: 1;
 }
 
@@ -74,10 +74,9 @@
   display: none;
 }
 
-.menu_corner {
+.menu-corner {
   display: inline-block;
-  justify-content: flex-end;
-  margin: 1.7% 0 5% 2%;
+  margin: 3% 0 5% 2%;
   width: 16vw;
   font: 600 15px/18px 'montserratbold', arial, helvetica, sans-serif;
   color: #e51937;
@@ -86,7 +85,7 @@
   transition: 0.4s;
 }
 
-.menu_corner__item {
+.menu-corner__item {
   color: #000;
   margin: 0 8% 0 5%;
   text-decoration: none;
@@ -94,18 +93,18 @@
   transition: 0.4s;
 }
 
-.menu_corner__enter {
+.menu-corner__enter {
   color: #000;
-  margin: 0 0 0 5%;
+  margin: 0 3% 0 5%;
   text-decoration: none;
   opacity: 0.7;
   transition: 0.4s;
 }
 
-.menu__btn {
+.menu-corner__btn {
   display: inline-block;
-  position: relative;
-  margin: 0 2%;
+  position: fixed;
+  margin: 0.5% 0 0 0;
   padding: 0 0 2% 0;
   width: 24px;
   height: 2px;
@@ -113,9 +112,9 @@
   z-index: 1;
 }
 
-.menu__btn > span,
-.menu__btn > span::before,
-.menu__btn > span::after {
+.menu-corner__btn > span,
+.menu-corner__btn > span::before,
+.menu-corner__btn > span::after {
   display: block;
   position: absolute;
   width: 24px;
@@ -124,30 +123,30 @@
   transition-duration: 0.25s;
 }
 
-.menu__btn > span::before {
+.menu-corner__btn > span::before {
   content: '';
-  top: -6px;
+  bottom: 6px;
 }
 
-.menu__btn > span::after {
+.menu-corner__btn > span::after {
   content: '';
   top: 6px;
 }
 
-#menu__toggle {
+#menu-corner__toggle {
   opacity: 0;
 }
 
-#menu__toggle:checked ~ .menu__btn > span {
+#menu-corner__toggle:checked ~ .menu-corner__btn > span {
   transform: rotate(45deg);
 }
 
-#menu__toggle:checked ~ .menu__btn > span::before {
+#menu-corner__toggle:checked ~ .menu-corner__btn > span::before {
   top: 0;
   transform: rotate(0);
 }
 
-#menu__toggle:checked ~ .menu__btn > span::after {
+#menu-corner__toggle:checked ~ .menu-corner__btn > span::after {
   top: 0;
   transform: rotate(90deg);
 }
@@ -155,8 +154,9 @@
 .main {
   display: block;
   width: 90%;
+  height: 106vh;
   margin: auto;
-  background: top no-repeat url(img/teslaback.svg);
+  background: no-repeat url(img/teslaback.svg) 50% 2%;
   background-size: 100vw;
 }
 
@@ -164,7 +164,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0;
+  margin: 3px 0 0 0;
   font: 600 90px/110px 'montserratmedium', arial, helvetica, sans-serif;
 }
 
@@ -176,140 +176,119 @@
   font: 400 17px/5px 'montserratregular', arial, helvetica, sans-serif;
 }
 
-.car {
+.main__car {
   display: flex;
   justify-content: center;
   margin: 3% 0 0 10%;
-  width: 74%;
+  width: 137vh;
+  height: 63vh;
 }
 
-.undercar {
+.main__undercar {
   display: flex;
   justify-content: normal;
   align-items: center;
   width: 59vw;
-  height: 12vh;
+  height: 13vh;
   margin: auto;
 }
 
-.undercar__speed {
+.main__undercar-speed {
   display: flex;
-  justify-content: flex-start;
+  flex-flow: wrap;
   align-items: center;
-  position: relative;
   width: 11vw;
-  margin: 3% 1% 0 0;
+  height: 7vh;
+  margin: 4% 1% 0 0;
   padding: 0 0 2% 10%;
   font: 600 35px/41px 'montserratsemibold', arial, helvetica, sans-serif;
-  background: url(img/clock.svg) no-repeat 12% 71%;
+  background: url(img/clock.svg) no-repeat 12% 53%;
 }
 
-.speed-sec {
-  display: inline;
-  position: absolute;
-  margin: 6% 0 0 25%;
-  font: 600 20px/25px 'montserratsemibold', arial, helvetica, sans-serif;
+.main__undercar-speed_sec {
+  margin: 8% 0 0 6%;
+  font: 600 20px/23px 'montserratsemibold', arial, helvetica, sans-serif;
+  letter-spacing: 0.05em;
 }
 
-.speed-limit {
-  display: flex;
-  position: absolute;
-  margin: 24% 0 0 0;
+.main__undercar-speed_limit {
+  width: 6vw;
+  letter-spacing: 0.04em;
   font: 400 12px/15px 'montserrat', arial, helvetica, sans-serif;
 }
 
-.speed-distance {
+.main__undercar-distance {
+  display: flex;
+  flex-flow: wrap;
+  align-items: center;
   width: 13vw;
   margin: 4% 1.5% 0 0;
-  height: 2vh;
-  padding: 0 0 7% 6%;
+  padding: 0 0 2% 6%;
   font: 600 35px/42px 'montserratsemibold', arial, helvetica, sans-serif;
-  background: url(img/snake.svg) no-repeat 2% 40%;
+  background: url(img/snake.svg) no-repeat 2% 70%;
+  height: 7vh;
 }
 
-.speed-km {
-  display: inline-block;
-  position: absolute;
-  margin: 1% 0 0 0.6%;
+.main__undercar-distance_km {
+  margin: 6% 3% 0 5%;
   font: 600 20px/24px 'montserratsemibold', arial, helvetica, sans-serif
 }
 
-.speed-savings {
-  display: flex;
-  position: absolute;
-  margin: 0;
-  font: 400 13px/15px 'montserrat', arial, helvetica, sans-serif;
+.main__undercar-distance_savings {
+  width: 6vw;
+  font: 400 12px/12px 'montserrat', arial, helvetica, sans-serif;
+  letter-spacing: 0.05em;
 }
 
-.speed-drive {
-  display: flex;
-  text-align: center;
-  margin: 4% 1.5% 0 0;
+.main__undercar-drive {
+  margin: 3.5% 1% 0 0;
   width: 8vw;
-  text-shadow: 0px 5px 9px rgba(150, 150, 150, 1);
-  padding: 0 0% 1% 4%;
+  text-shadow: 0px 5px 9px rgb(150 150 150);
+  padding: 1% 0% 1% 4%;
   font: 700 14px/19px 'montserratbold', arial, helvetica, sans-serif;
-  background: url(img/wheel.svg) no-repeat 4% 0%;
+  background: url(img/wheel.svg) no-repeat 3% 47%;
 }
 
-.speed-button {
+.main__undercar-button {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 11vw;
+  width: 10.8vw;
   height: 5vh;
-  margin: 3% 0% 0 0;
+  margin: 3% 0 0 0.6%;
   border: 2px solid #e51937;
-  font: 700 13.5px/14px 'montserratbold', arial, helvetica, sans-serif;
+  font: 700 13px/14px 'montserratbold', arial, helvetica, sans-serif;
+  letter-spacing: 0.03em;
   color: #e51937;
   text-decoration: none;
 }
 
-.speed-button:hover {
+.main__undercar-button:hover {
   box-shadow: inset 0 0 0 3px #e51937;
   transition: 0.5s;
 }
 
-.pointer {
-  height: 5px;
-  width: 28px;
-  position: relative;
-  margin: 3% 0 0 49%;
-}
-
-.pointer:before,
-.pointer:after {
-  content: "";
-  height: 100%;
-  width: 50%;
-  position: absolute;
-  top: 0;
-  background: #e51937;
-}
-
-.pointer:before {
-  left: 0;
-  transform: skew(0deg, 45deg);
-}
-
-.pointer:after {
-  right: 0;
-  transform: skew(0deg, -45deg);
+.main__pointer {
+  background: url(img/arrow.svg) center no-repeat;
+  height: 7vh;
+  margin: 1% 0 0 0;
 }
 
 .cars {
   display: flex;
   justify-content: space-between;
-  background: url(img/carinside.svg) no-repeat 0% 100%;
+  background: url(img/carinside.svg) no-repeat 0% 101%;
   background-size: 88%;
   width: 100%;
-  margin: 3% 0 0 0;
+  height: 100%;
+  margin: 1.7% 0 0 0;
 }
 
 .cars__title {
   vertical-align: top;
-  margin: 4.5% 38.5% 0 5.7%;
+  margin: 4.5% 0% 0 5.7%;
   width: 25vw;
+  height: 17vh;
   color: #e51937;
   font: 600 70px/85px 'montserratmedium', arial, helvetica, sans-serif;
 }
@@ -318,8 +297,8 @@
   text-align: left;
   align-items: flex-end;
   width: 26vw;
-  height: 100%;
-  padding: 1.7% 1.5% 3% 3%;
+  height: 119vh;
+  padding: 1.5% 1.5% 3% 3%;
   background: #e51937;
   color: #fff;
 }
@@ -330,15 +309,15 @@
 
 .cars__describtion-title {
   font: 500 30px/37px 'montserrat', arial, helvetica, sans-serif;
-  margin: 7% 0 3.5% 3%;
+  margin: 8% 0 3.5% 3%;
   letter-spacing: 0.1em;
 }
 
 .cars__describtion-body {
   font: 500 15.5px/18px 'montserrat', arial, helvetica, sans-serif;
   margin: 0 0 13% 3%;
-  letter-spacing: 0.05em;
-  width: 42vh;
+  letter-spacing: 0.06em;
+  width: 25vw;
 }
 
 .cars__describtion-part {
@@ -357,14 +336,12 @@
 
 .cars__describtion-option-dm {
   display: inline;
-  position: relative;
   letter-spacing: 0.09em;
   font: 100 20px/24px 'montserratthin', arial, helvetica, sans-serif;
 }
 
 .cars__describtion-option-under {
   display: block;
-  position: relative;
   font: 100 12px/15px 'montserratthin', arial, helvetica, sans-serif;
   opacity: 0.7;
   letter-spacing: 0.08em;
@@ -377,12 +354,11 @@
   padding: 0 0 2% 19%;
   font: 100 20px/18px 'montserratthin', arial, helvetica, sans-serif;
   letter-spacing: 0.09em;
-  background: url(img/wifi.svg) no-repeat 2% 36%;
+  background: url(img/wifi.svg) no-repeat 2% 30%;
 }
 
 .cars__describtion-wifi-under {
   display: block;
-  position: relative;
   margin: 1% 0 0 0;
   font: 100 12px/14px 'montserratthin', arial, helvetica, sans-serif;
   letter-spacing: 0.07em;
@@ -399,15 +375,13 @@
   background: url(img/bag.svg) no-repeat 5% 49%;
 }
 
-.cars__describtion-size-v {
+.cars__describtion-size_v {
   display: inline;
-  position: relative;
   font: 400 20px/24px 'montserrat', arial, helvetica, sans-serif;
 }
 
-.cars__describtion-size-under {
+.cars__describtion-size_under {
   display: block;
-  position: relative;
   font: 100 12px/14px 'montserratthin', arial, helvetica, sans-serif;
   letter-spacing: 0.08em;
   opacity: 0.7;
@@ -438,7 +412,7 @@
 
 .cars__describtion-info-button {
   display: flex;
-  margin: 5% 6% 5% 0%;
+  margin: 4% 6% 6% 0%;
   padding: 2.5% 10% 2.5% 11%;
   border: 2px solid #fff;
   color: #fff;
@@ -455,11 +429,11 @@
   display: flex;
   justify-content: space-between;
   flex-direction: row;
-  height: 125vh;
+  height: 128vh;
   background: #fff;
 }
 
-.safety__descrbition {
+.safety__describtion {
   position: absolute;
   justify-content: flex-start;
   text-align: left;
@@ -471,22 +445,23 @@
 }
 
 .safety__describtion-title {
-  font: 600 30px/36px 'montserratbold', arial, helvetica, sans-serif;
-  margin: 1% 0 3.7% 5.5%;
-  letter-spacing: 0.04em;
+  font: 500 30px/36px 'montserratsemibold', arial, helvetica, sans-serif;
+  margin: 2% 0 0 6%;
+  letter-spacing: 0.09em;
 }
 
-.safety__describtion-body {
+.safety__describtion-text {
   font: 500 15px/18px 'montserrat', arial, helvetica, sans-serif;
-  margin: 0 0 0 6%;
+  margin: 4% 0 0 6%;
   letter-spacing: 0.07em;
-  width: 45vh;
+  width: 23vw;
+  height: 18vh;
 }
 
 .safety__describtion-option {
   display: inline-block;
   text-align: left;
-  margin: 16% 0 3.5% 6.5%;
+  margin: 15.5% 0 3.5% 6.5%;
   font: 500 30px/36px 'montserratmedium', arial, helvetica, sans-serif;
   letter-spacing: 0.09em;
 }
@@ -505,7 +480,7 @@
   margin: 0;
 }
 
-.front {
+.safety__list-text-front {
   display: block;
   text-align: left;
   margin: 7% 0 5% 0;
@@ -513,48 +488,48 @@
   font: 700 17px/21px 'montserrat', arial, helvetica, sans-serif;
 }
 
-.aside {
+.safety__list-text-aside {
   display: block;
   margin: 11% 0 5% 0;
   letter-spacing: 0.05em;
   font: 700 17px/21px 'montserrat', arial, helvetica, sans-serif;
 }
 
-.asidetwo {
+.safety__list-text-asidetwo {
   display: inline-block;
   margin: 6% 0 5% 0;
   letter-spacing: 0.05em;
   font: 700 17px/21px 'montserrat', arial, helvetica, sans-serif;
 }
 
-.foraside {
+.safety__list-text-foraside {
   display: inline;
   letter-spacing: 0.05em;
   font: 500 10px/12px 'montserrat', arial, helvetica, sans-serif;
 }
 
-.driver {
+.safety__list-text-driver {
   display: block;
   margin: 5% 0 5% 0;
   letter-spacing: 0.07em;
   font: 700 17px/21px 'montserrat', arial, helvetica, sans-serif;
 }
 
-.passanger {
+.safety__list-text-passanger {
   display: block;
   margin: 10% 0 5% 0;
   letter-spacing: 0.07em;
   font: 700 17px/21px 'montserrat', arial, helvetica, sans-serif;
 }
 
-.safety__list-stars {
+.safety__list-objects {
   flex-direction: column;
   justify-content: space-between;
   width: 48%;
   margin: 3% 4.5% 5.5% 0;
 }
 
-.stars {
+.safety__list-objects-stars {
   display: block;
   content: "";
   width: 90%;
@@ -563,7 +538,7 @@
   background-size: 19%;
 }
 
-.fivestars {
+.safety__fivestars {
   display: inline-block;
   font: 600 49px/45px 'montserratmedium', arial, helvetica, sans-serif;
   color: #fff;
@@ -573,22 +548,22 @@
   background: url(img/shield.svg) no-repeat 7% 66%;
 }
 
-.security {
+.safety__fivestars_security {
   display: block;
   position: relative;
   font: 400 25px/30px 'montserratthin', arial, helvetica, sans-serif;
 }
 
-.info {
+.safety__info {
   display: flex;
   justify-content: space-between;
-  margin: 16.5% 0 6% 0;
+  margin: 16% 0 6% 0;
   width: 100%;
 }
 
-.info__moreinfo {
+.safety__info-moreinfo {
   display: flex;
-  margin: 0 0 0 0;
+  margin: 0;
   padding: 1% 0 1% 9.8%;
   font: 400 12px/16px 'montserrat', arial, helvetica, sans-serif;
   align-items: center;
@@ -596,7 +571,7 @@
   background: url(img/icircle.svg) no-repeat 2% 47%;
 }
 
-.info__moreinfo:hover {
+.safety__info-moreinfo:hover {
   -webkit-transform: scale(1.2);
   -ms-transform: scale(1.2);
   transform: scale(1.2);
@@ -604,8 +579,8 @@
   cursor: pointer;
 }
 
-.info__button {
-  display: inline;
+.safety__info-button {
+  display: flex;
   margin: 0% 1% 0 0;
   padding: 2.5% 10% 2.5% 13%;
   border: 2px solid #fff;
@@ -615,7 +590,7 @@
   text-decoration: none;
 }
 
-.info__button:hover {
+.safety__info-button:hover {
   box-shadow: inset 0 0 0 4px #fff;
   transition: 0.5s;
 }
@@ -635,194 +610,1128 @@
   display: flex;
   justify-content: center;
   width: 100%;
-  height: 125vh;
-  background: url(img/car-frame.svg) no-repeat 89% 54%;
+  height: 128vh;
+  background: url(img/car-frame.svg) no-repeat 89% 55%;
   background-size: 73vw;
 }
 
-@media (min-width: 1600px) {
-  .menu__item {
-    font: 600 20px/25px 'montserratbold', sans-serif;
-  }
-
-  .menu_corner__item,
-  .menu_corner__enter {
-    font: 600 20px/25px 'montserratbold', sans-serif;
-    margin: 0 4%;
-  }
-
-  .main__title {
-    font: 600 100px/120px 'montserratmedium', arial, helvetica, sans-serif;
-  }
-
-  .main__subtitle {
-    font: 400 20px/8px 'montserratregular', arial, helvetica, sans-serif;
-  }
-
-  .undercar__speed {
-    width: 8vw;
-    margin: 0.5% 8% 0 0;
-  }
-
-  .speed-distance {
-    width: 6vw;
-    margin: 4% 11% 0 0;
-  }
-
-  .speed-button {
-    height: 6vh;
-    font: 700 16px/19px 'montserratbold', arial;
-  }
-
-  .cars__title {
-    font: 600 80px/85px 'montserratmedium', arial, helvetica, sans-serif;
-  }
-
-  .cars__describtion {
-    font: 600 80px/85px 'montserratmedium', arial, helvetica, sans-serif;
-  }
-
-  .cars__describtion-body {
-    font: 500 18px/21px 'montserrat', arial, helvetica, sans-serif;
-  }
-
-  .safety {
-      height: 110vh;
-  }
-
-  .safety__describtion-title {
-    font: 600 35px/40px 'montserratbold', arial, helvetica, sans-serif;
-  }
-
-  .safety__describtion-body {
-    font: 500 18px/21px 'montserrat', arial, helvetica, sans-serif;
-  }
-
-  .safety__list-stars {
-    width: 39%;
-  }
-
-  .safety__details-car {
-    background: url(img/car-frame.svg) no-repeat 89% 50%;
-    background-size: 73vw;
-  }
-}
-
-@media (max-width: 1439px) {
-  .header {
-    width: 90%;
-  }
-
+@media (min-width: 2200px) {
   .logo {
-    margin: 0.5% 11% 4% 0;
+    margin: 2% 6% 4% 0;
+    width: 20vw;
+    height: 11vh;
+    background: url(img/teslamark.svg) no-repeat 0% 100%;
+    background-size: 79%;
   }
 
   .menu {
-    width: 45vw;
-    margin: 1.7% 7% 0 0;
-  }
-
-  .menu__item:first-child {
-    margin: 0% 5% 0 0%;
+    margin: 4% 0 0 0;
+    font: 600 30px/50px 'montserratbold', sans-serif;
   }
 
   .menu__item {
-    margin: 0;
-    font: 600 15px/19px 'montserratbold', sans-serif;
+    font: 600 30px/50px 'montserratbold', sans-serif;
   }
 
-  .menu_corner {
-    width: 22vw;
-    margin: 1.7% 0 5% 0%;
+  .menu-corner {
+      margin: 4.5% 0 5% 0%;
+      width: 19vw;
+      font: 600 28px/20px 'montserratbold', arial, helvetica, sans-serif;
   }
 
-  .menu_corner__item {
-    margin: 0;
+  .menu-corner__btn > span,
+  .menu-corner__btn > span::before,
+  .menu-corner__btn > span::after {
+    width: 51px;
+    height: 5px;
+  }
+
+  .menu-corner__btn > span::before {
+    bottom: 12px;
+  }
+
+  .menu-corner__btn > span::after {
+    top: 12px;
+  }
+
+  .main__car {
+    display: flex;
+    justify-content: center;
+    margin: 3% 0 0 10%;
+    width: 127vh;
+    height: 59vh;
+  }
+
+  .main__title {
+    font: 600 141px/164px 'montserratmedium', arial, helvetica, sans-serif;
+    margin: 10% 0 0 0;
+  }
+
+  .main__subtitle {
+    font: 400 29px/33px 'montserratregular', arial, helvetica, sans-serif;
+  }
+
+  .main__undercar {
+    width: 68vw;
+    height: 23vh;
+    margin: auto;
+  }
+
+  .main__undercar-speed {
+    width: 10vw;
+    height: 11vh;
+    margin: 4% 4% 0 0;
+    padding: 0 0 2% 10%;
+    font: 600 69px/77px 'montserratsemibold', arial, helvetica, sans-serif;
+    background: url(img/clock.svg) no-repeat 12% 35%;
+    background-size: 31%;
+  }
+
+  .main__undercar-speed_sec {
+    margin: 9% 0 0 6%;
+    font: 600 42px/60px 'montserratsemibold', arial, helvetica, sans-serif;
+  }
+
+  .main__undercar-speed_limit {
+    width: 9vw;
+    font: 400 24px/31px 'montserrat', arial, helvetica, sans-serif;
+  }
+
+  .main__undercar-distance {
+    width: 12vw;
+    margin: 4% 4% 0 0;
+    padding: 0% 0 2% 8%;
+    font: 600 69px/74px 'montserratsemibold', arial, helvetica, sans-serif;
+    background: url(img/snake.svg) no-repeat 2% 70%;
+    background-size: 24%;
+    height: 11vh;
+  }
+
+  .main__undercar-distance_km {
+    margin: 6% 3% 0 5%;
+    font: 600 45px/53px 'montserratsemibold', arial, helvetica, sans-serif;
+  }
+
+  .main__undercar-distance_savings {
+    width: 11vw;
+    font: 400 26px/36px 'montserrat', arial, helvetica, sans-serif;
+    letter-spacing: 0.05em;
+  }
+
+  .main__undercar-drive {
+    margin: 0.5% 1% 0 0;
+    width: 14vw;
+    text-shadow: 0px 5px 9px rgb(150 150 150);
+    padding: 2% 0% 2% 6%;
+    font: 700 31px/40px 'montserratbold', arial, helvetica, sans-serif;
+    background: url(img/wheel.svg) no-repeat 3% 47%;
+    background-size: 18%;
+  }
+
+  .main__undercar-button {
+    width: 15.8vw;
+    height: 7vh;
+    margin: 0% 0 0 0.6%;
+    border: 5px solid #e51937;
+    font: 700 29px/36px 'montserratbold', arial;
+  }
+
+  .main__pointer {
+    background: url(img/arrow.svg) center no-repeat;
+    background-size: 4%;
+    height: 9vh;
+  }
+
+  .cars {
+    margin: 8.7% 0 0 0;
   }
 
   .cars__title {
-    font: 600 56px/60px 'montserratmedium', arial, helvetica, sans-serif;
+    font: 600 105px/115px 'montserratmedium', arial, helvetica, sans-serif;
   }
 
-  .cars__describtion-body {
-    font: 500 13.5px/15px 'montserrat', arial, helvetica, sans-serif;
-  }
-
-  .undercar__speed {
-    background: url(img/clock.svg) no-repeat 5% 71%;
-  }
-
-  .speed-distance {
-    background: url(img/snake.svg) no-repeat 0% 40%;
+  .cars__describtion {
+    width: 26vw;
+    height: 107vh;
+    padding: 1.5% 1.5% 4% 3%;
   }
 
   .cars__describtion-title {
-   font: 500 25px/37px 'montserrat', arial, helvetica, sans-serif;
+    font: 500 45px/53px 'montserrat', arial, helvetica, sans-serif;
+  }
+
+  .cars__describtion-body {
+    font: 500 25px/31px 'montserrat', arial, helvetica, sans-serif;
+    margin: 5% 0 13% 3%;
+  }
+
+  .cars__describtion-option {
+    padding: 0 0 5% 20%;
+    font: 600 67px/73px 'montserratsemibold', arial, helvetica, sans-serif;
+    background: url(img/screen.svg) no-repeat 6% 100%;
+    background-size: 21%;
+  }
+
+  .cars__describtion-option-dm {
+    font: 100 32px/37px 'montserratthin', arial, helvetica, sans-serif;
+  }
+
+  .cars__describtion-option-under {
+    font: 100 22px/25px 'montserratthin', arial, helvetica, sans-serif;
+  }
+
+  .cars__describtion-wifi {
+    padding: 0 0 2% 21%;
+    font: 100 34px/40px 'montserratthin', arial, helvetica, sans-serif;
+    background: url(img/wifi.svg) no-repeat 2% 30%;
+    background-size: 15%;
+  }
+
+  .cars__describtion-wifi-under {
+    font: 100 21px/25px 'montserratthin', arial, helvetica, sans-serif;
+  }
+
+  .cars__describtion-size {
+    margin: 8% 0 6% 0;
+    padding: 0 0 2% 22%;
+    font: 500 63px/72px 'montserratsemibold', arial, helvetica, sans-serif;
+    background: url(img/bag.svg) no-repeat 7% 49%;
+    background-size: 22%;
+  }
+
+  .cars__describtion-size_v {
+    font: 400 35px/42px 'montserrat', arial, helvetica, sans-serif;
+  }
+
+  .cars__describtion-size_under {
+    font: 100 20px/27px 'montserratthin', arial, helvetica, sans-serif;
   }
 
   .cars__describtion-info {
-   font: 500 11px/16px 'montserrat', arial, helvetica, sans-serif;
+    font: 500 22px/31px 'montserrat', arial, helvetica, sans-serif;
+    margin: 33% 0 0 0;
+    width: 105%;
   }
 
   .cars__describtion-info-more {
-    padding: 1% 0 1% 10%;
-    font: 500 10px/16px 'montserrat', arial, helvetica, sans-serif;
+    background-size: 15%;
+  }
+
+  .cars__describtion-info-button {
+    border: 4px solid #fff;
   }
 
   .safety {
-    height: 125vh;
+    height: 100%;
+  }
+
+  .safety__describtion {
+    height: 113.5vh;
+  }
+
+  .safety__details-car {
+    height: 123vh;
   }
 
   .safety__describtion-title {
-    font: 600 21px/28px 'montserratbold', arial, helvetica, sans-serif;
+    font: 500 46px/55px 'montserratbold', arial, helvetica, sans-serif;
   }
 
-  .safety__describtion-body {
-    font: 500 12px/17px 'montserrat', arial, helvetica, sans-serif;
-    letter-spacing: 0;
+  .safety__describtion-text {
+    font: 500 25px/31px 'montserrat', arial, helvetica, sans-serif;
   }
 
   .safety__describtion-option {
-    font: 500 21px/27px 'montserratmedium', arial, helvetica, sans-serif;
-    letter-spacing: 0.09em;
+    font: 500 42px/56px 'montserratmedium', arial, helvetica, sans-serif;
+  }
+
+  .safety__list-text-front,
+  .safety__list-text-aside,
+  .safety__list-text-asidetwo,
+  .safety__list-text-driver,
+  .safety__list-text-passanger {
+    font: 700 27px/35px 'montserrat', arial, helvetica, sans-serif;
+  }
+
+  .safety__fivestars {
+    font: 500 70px/71px 'montserratmedium', arial, helvetica, sans-serif;
+    background-size: 24%;
+  }
+
+  .safety__fivestars_security {
+    font: 400 34px/38px 'montserratthin', arial, helvetica, sans-serif;
+  }
+
+  .safety__info-moreinfo {
+    font: 500 23px/31px 'montserrat', arial, helvetica, sans-serif;
+    background: url(img/icircle.svg) no-repeat 2% 47%;
+    background-size: 14%;
+  }
+
+  .safety__info-button {
+    border: 4px solid #fff;
+    font: 500 23px/31px 'montserrat', arial, helvetica, sans-serif;
+  }
+}
+
+@media (max-width: 2199px) {
+  .logo {
+    width: 21vw;
+    height: 11vh;
+    margin: 2% 8% 4% 0;
+    background: url(img/teslamark.svg) no-repeat 0% 100%;
+    background-size: 71%;
+  }
+
+  .menu {
+    margin: 5% 0 0 0;
+  }
+
+  .menu__item {
+    font: 600 22px/34px 'montserratbold', sans-serif;
+  }
+
+  .menu-corner {
+    margin: 5% 0 5% 0%;
+    width: 19vw;
+    font: 600 22px/34px 'montserratbold', arial, helvetica, sans-serif;
+  }
+
+  .menu-corner__btn {
+    margin: 1% 0 0 0;
+  }
+
+  .menu-corner__btn > span,
+  .menu-corner__btn > span::before,
+  .menu-corner__btn > span::after {
+    width: 41px;
+    height: 4px;
+  }
+
+  .menu-corner__btn > span::before {
+    bottom: 12px;
+  }
+
+  .menu-corner__btn > span::after {
+    top: 12px;
+  }
+
+  .main__title {
+      font: 600 120px/135px 'montserratmedium', arial, helvetica, sans-serif;
+      margin: 10% 0 0 0;
+  }
+
+  .main__subtitle {
+    font: 400 21px/33px 'montserratregular', arial, helvetica, sans-serif;
+  }
+
+  .main__car {
+    display: flex;
+    justify-content: center;
+    margin: 3% 0 0 9%;
+    width: 75vw;
+    height: 71vh;
+  }
+
+  .main__undercar {
+    width: 68vw;
+    height: 23vh;
+    margin: auto;
+  }
+
+  .main__undercar-speed {
+    width: 10vw;
+    height: 11vh;
+    margin: 4% 4% 0 0;
+    padding: 0 0 2% 10%;
+    font: 600 60px/67px 'montserratsemibold', arial, helvetica, sans-serif;
+    background: url(img/clock.svg) no-repeat 12% 35%;
+    background-size: 30%;
+  }
+
+  .main__undercar-speed_sec {
+    margin: 9% 0 0 6%;
+    font: 600 36px/40px 'montserratsemibold', arial, helvetica, sans-serif;
+  }
+
+  .main__undercar-speed_limit {
+    width: 9vw;
+    font: 400 20px/26px 'montserrat', arial, helvetica, sans-serif;
+  }
+
+  .main__undercar-distance {
+    width: 12vw;
+    margin: 4% 4% 0 0;
+    padding: 0% 0 2% 8%;
+    font: 600 60px/61px 'montserratsemibold', arial, helvetica, sans-serif;
+    background: url(img/snake.svg) no-repeat 2% 70%;
+    background-size: 23%;
+    height: 11vh;
+  }
+
+  .main__undercar-distance_km {
+    margin: 10% 3% 0 5%;
+    font: 600 36px/40px 'montserratsemibold', arial, helvetica, sans-serif;
+  }
+
+  .main__undercar-distance_savings {
+    width: 11vw;
+    font: 400 21px/26px 'montserrat', arial, helvetica, sans-serif;
+    letter-spacing: 0.05em;
+  }
+
+  .main__undercar-drive {
+    font: 700 23px/32px 'montserratbold', arial, helvetica, sans-serif;
+    width: 11vw;
+    background: url(img/wheel.svg) no-repeat 0% 47%;
+    background-size: 16%;
+    margin: 1% 1% 0 0;
+  }
+
+  .main__undercar-button {
+    font: 700 23px/26px 'montserratbold', arial;
+    width: 13vw;
+    height: 7vh;
+    margin: 1% 0 0 0;
+  }
+
+  .main__pointer {
+    background: url(img/arrow.svg) center no-repeat;
+    background-size: 4%;
+    height: 9vh;
+  }
+
+  .cars {
+    margin: 8.7% 0 0 0;
+  }
+
+  .cars__title {
+    font: 600 88px/92px 'montserratmedium', arial, helvetica, sans-serif;
+  }
+
+  .cars__describtion {
+    width: 26vw;
+    height: 140vh;
+    padding: 1.5% 1.5% 4% 3%;
+  }
+
+  .cars__describtion-title {
+    font: 500 40px/48px 'montserrat', arial, helvetica, sans-serif;
+  }
+
+  .cars__describtion-body {
+    font: 500 21px/28px 'montserrat', arial, helvetica, sans-serif;
+    margin: 5% 0 13% 3%;
+  }
+
+  .cars__describtion-option {
+    padding: 0 0 2% 20%;
+    font: 600 56px/64px 'montserratsemibold', arial, helvetica, sans-serif;
+    background: url(img/screen.svg) no-repeat 6% 100%;
+    background-size: 19%;
+  }
+
+  .cars__describtion-option-dm {
+    font: 100 28px/30px 'montserratthin', arial, helvetica, sans-serif;
+  }
+
+  .cars__describtion-option-under {
+    font: 100 20px/22px 'montserratthin', arial, helvetica, sans-serif;
+  }
+
+  .cars__describtion-wifi {
+    padding: 0 0 2% 21%;
+    font: 100 28px/30px 'montserratthin', arial, helvetica, sans-serif;
+    background: url(img/wifi.svg) no-repeat 2% 30%;
+    background-size: 14%;
+  }
+
+  .cars__describtion-wifi-under {
+    font: 100 20px/22px 'montserratthin', arial, helvetica, sans-serif;
+  }
+
+  .cars__describtion-size {
+    margin: 8% 0 6% 0;
+    padding: 0 0 2% 22%;
+    font: 500 61px/68px 'montserratsemibold', arial, helvetica, sans-serif;
+    background: url(img/bag.svg) no-repeat 7% 49%;
+    background-size: 19%;
+  }
+
+  .cars__describtion-size_v {
+    font: 400 28px/32px 'montserrat', arial, helvetica, sans-serif;
+  }
+
+  .cars__describtion-size_under {
+    font: 100 20px/22px 'montserratthin', arial, helvetica, sans-serif;
+  }
+
+  .cars__describtion-info {
+    font: 500 18px/27px 'montserrat', arial, helvetica, sans-serif;
+    margin: 33% 0 0 0;
+    width: 101%;
+  }
+
+  .cars__describtion-info-more {
+    background-size: 15%;
+  }
+
+  .cars__describtion-info-button {
+    border: 4px solid #fff;
+  }
+
+  .safety {
+    height: 100%;
+  }
+
+  .safety__describtion {
+    height: 119vh;
+  }
+
+  .safety__describtion-title {
+    font: 500 36px/43px 'montserratbold', arial, helvetica, sans-serif;
+  }
+
+  .safety__describtion-text {
+    font: 500 21px/29px 'montserrat', arial, helvetica, sans-serif;
+    height: 30vh;
+    width: 25vw;
+  }
+
+  .safety__describtion-option {
+    font: 500 37px/45px 'montserratmedium', arial, helvetica, sans-serif;
+    margin: 0 0 3.5% 6.5%;
+  }
+
+  .safety__list-text-front,
+  .safety__list-text-aside,
+  .safety__list-text-asidetwo,
+  .safety__list-text-driver,
+  .safety__list-text-passanger {
+    font: 700 21px/28px 'montserrat', arial, helvetica, sans-serif;
+  }
+
+  .safety__fivestars {
+    font: 500 60px/64px 'montserratmedium', arial, helvetica, sans-serif;
+    background-size: 21%;
+  }
+
+  .safety__fivestars_security {
+    font: 400 27px/35px 'montserratthin', arial, helvetica, sans-serif;
+  }
+
+  .safety__info-moreinfo {
+    font: 500 17px/28px 'montserrat', arial, helvetica, sans-serif;
+    background: url(img/icircle.svg) no-repeat 2% 47%;
+    background-size: 13%;
+  }
+
+  .safety__info-button {
+    border: 4px solid #fff;
+    font: 500 17px/25px 'montserrat', arial, helvetica, sans-serif;
+  }
+}
+
+@media (max-width: 1799px) {
+  .header {
+    height: 16vh;
+    margin: auto;
+  }
+
+  .logo {
+    display: inline-block;
+    width: 166px;
+    height: 35px;
+    margin: 3% 18% 4% 0;
+    background: url(img/teslamark.svg) 0% 100%;
+  }
+
+  .menu {
+    display: inline-block;
+    align-items: center;
+    width: 49vw;
+    margin: 3% 0 0 0;
+  }
+
+  .menu__item {
+    margin: 0 0 0 3%;
+    font: 600 15px/18px 'montserratbold', arial, helvetica, sans-serif;
+    color: #000;
+    text-decoration: none;
+    opacity: 0.7;
+    transition: 0.4s;
+  }
+
+  .menu-corner {
+    display: inline-block;
+    margin: 3% 0 5% 2%;
+    width: 17vw;
+    font: 600 15px/18px 'montserratbold', arial, helvetica, sans-serif;
+  }
+
+  .menu-corner__item {
+    margin: 0 10% 0 8%;
+  }
+
+  .menu-corner__enter {
+    margin: 0 3% 0 5%;
+  }
+
+  .menu-corner__btn {
+    display: inline-block;
+    margin: 0.5% 0 0 0;
+    padding: 0 0 2% 0;
+    width: 24px;
+    height: 2px;
+  }
+
+  .menu-corner__btn > span,
+  .menu-corner__btn > span::before,
+  .menu-corner__btn > span::after {
+    width: 24px;
+    height: 2px;
+  }
+
+  .menu-corner__btn > span::before {
+    content: '';
+    bottom: 6px;
+  }
+
+  .menu-corner__btn > span::after {
+    content: '';
+    top: 6px;
+  }
+
+  .main {
+    width: 90%;
+    height: 100%;
+    margin: auto;
+    background: no-repeat url(img/teslaback.svg) 50% 0%;
+    background-size: 100vw;
+  }
+
+  .main__title {
+    margin: 0;
+    font: 600 90px/110px 'montserratmedium', arial, helvetica, sans-serif;
+  }
+
+  .main__subtitle {
+    margin: 0;
+    font: 400 17px/5px 'montserratregular', arial, helvetica, sans-serif;
+  }
+
+  .main__car {
+    margin: 1% 0 0 10%;
+    width: 115vh;
+    height: 56vh;
+  }
+
+  .main__undercar {
+    width: 59vw;
+    height: 10vh;
+    margin: auto;
+  }
+
+  .main__undercar-speed {
+    width: 11vw;
+    height: 7vh;
+    margin: 4% 1% 0 0;
+    padding: 0 0 3% 10%;
+    font: 600 35px/41px 'montserratsemibold', arial, helvetica, sans-serif;
+    background: url(img/clock.svg) no-repeat 12% 37%;
+  }
+
+  .main__undercar-speed_sec {
+    margin: 8% 0 0 6%;
+    font: 600 20px/23px 'montserratsemibold', arial, helvetica, sans-serif;
+    letter-spacing: 0.05em;
+  }
+
+  .main__undercar-speed_limit {
+    width: 6vw;
+    letter-spacing: 0.04em;
+    font: 400 12px/15px 'montserrat', arial, helvetica, sans-serif;
+  }
+
+  .main__undercar-distance {
+    width: 13vw;
+    margin: 3% 1.5% 0 0;
+    padding: 0 0 2% 6%;
+    font: 600 35px/42px 'montserratsemibold', arial, helvetica, sans-serif;
+    background: url(img/snake.svg) no-repeat 2% 70%;
+    height: 7vh;
+  }
+
+  .main__undercar-distance_km {
+    margin: 6% 3% 0 5%;
+    font: 600 20px/24px 'montserratsemibold', arial, helvetica, sans-serif;
+  }
+
+  .main__undercar-distance_savings {
+    width: 6vw;
+    font: 400 12px/12px 'montserrat', arial, helvetica, sans-serif;
+    letter-spacing: 0.05em;
+  }
+
+  .main__undercar-drive {
+    margin: 2% 1% 0 0;
+    width: 8vw;
+    padding: 1% 0% 1% 4%;
+    font: 700 14px/19px 'montserratbold', arial, helvetica, sans-serif;
+    background: url(img/wheel.svg) no-repeat 3% 47%;
+  }
+
+  .main__undercar-button {
+    width: 10.8vw;
+    height: 5vh;
+    margin: 2% 0 0 0.6%;
+    border: 2px solid #e51937;
+    font: 700 13px/14px 'montserratbold', arial, helvetica, sans-serif;
+  }
+
+  .main__pointer {
+    background: url(img/arrow.svg) center no-repeat;
+    height: 7vh;
+    margin: 0.5% 0 0 0
+  }
+
+  .cars {
+    background: url(img/carinside.svg) no-repeat 0% 101%;
+    background-size: 88%;
+    width: 100%;
+    height: 100%;
+    margin: 1% 0 0 0;
+  }
+
+  .cars__title {
+    font: 600 70px/85px 'montserratmedium', arial, helvetica, sans-serif;
+  }
+
+  .cars__describtion {
+    width: 26vw;
+    height: 100vh;
+    padding: 1.5% 1.5% 3% 3%;
+  }
+
+  .cars__describtion-title {
+    font: 500 30px/37px 'montserrat', arial, helvetica, sans-serif;
+  }
+
+  .cars__describtion-body {
+    font: 500 15.5px/18px 'montserrat', arial, helvetica, sans-serif;
+    margin: 0 0 13% 3%;
+    width: 23vw;
+  }
+
+  .cars__describtion-option {
+    margin: 3.1% 0 3% 0;
+    padding: 0 0 2% 17%;
+    font: 600 35px/43px 'montserratsemibold', arial, helvetica, sans-serif;
+    background: url(img/screen.svg) no-repeat 6% 100%;
+  }
+
+  .cars__describtion-option-dm {
+    font: 100 20px/24px 'montserratthin', arial, helvetica, sans-serif;
+  }
+
+  .cars__describtion-option-under {
+    font: 100 12px/15px 'montserratthin', arial, helvetica, sans-serif;
+  }
+
+  .cars__describtion-wifi {
+    margin: 7.2% 0 5% 0;
+    padding: 0 0 2% 19%;
+    font: 100 20px/18px 'montserratthin', arial, helvetica, sans-serif;
+    background: url(img/wifi.svg) no-repeat 2% 30%;
+  }
+
+  .cars__describtion-wifi-under {
+    margin: 1% 0 0 0;
+    font: 100 12px/14px 'montserratthin', arial, helvetica, sans-serif;
+  }
+
+  .cars__describtion-size {
+    margin: 0 0 6% 0;
+    padding: 0 0 2% 18%;
+    font: 600 35px/42px 'montserratsemibold', arial, helvetica, sans-serif;
+    background: url(img/bag.svg) no-repeat 5% 49%;
+  }
+
+  .cars__describtion-size_v {
+    font: 400 20px/24px 'montserrat', arial, helvetica, sans-serif;
+  }
+
+  .cars__describtion-size_under {
+    font: 100 12px/14px 'montserratthin', arial, helvetica, sans-serif;
+  }
+
+  .cars__describtion-info {
+    font: 500 13px/16px 'montserrat', arial, helvetica, sans-serif;
+    margin: 33% 0 0 0;
+  }
+
+  .cars__describtion-info-more {
+    margin: 6.9% 0 8% 1%;
+    padding: 1% 0 1% 9%;
+    background: url(img/icircle.svg) no-repeat 2% 0%;
+  }
+
+  .cars__describtion-info-button {
+    margin: 4% 6% 6% 0%;
+    padding: 2.5% 10% 2.5% 11%;
+    border: 2px solid #fff;
+    color: #fff;
+  }
+
+  .safety {
+    height: 106vh;
+  }
+
+  .safety__describtion {
+    position: absolute;
+    justify-content: flex-start;
+    text-align: left;
+    align-items: flex-start;
+    width: 24.5%;
+    height: 97vh;
+    padding: 3% 3.6% 2.5% 2.5%;
+    background: #e51937;
+    color: #fff;
+  }
+
+  .safety__describtion-title {
+    font: 500 30px/36px 'montserratsemibold', arial, helvetica, sans-serif;
+    margin: 2% 0 0 6%;
+  }
+
+  .safety__describtion-text {
+    font: 500 15px/18px 'montserrat', arial, helvetica, sans-serif;
+    margin: 4% 0 0 6%;
+    width: 22vw;
+    height: 18vh;
+  }
+
+  .safety__describtion-option {
+    margin: 8% 0 3.5% 6.5%;
+    font: 500 30px/36px 'montserratmedium', arial, helvetica, sans-serif;
   }
 
   .safety__list {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row;
-    align-content: space-between;
     padding: 0 3% 0 0;
     margin: 2% 0 27% 5.8%;
   }
 
-  .front,
-  .aside,
-  .asidetwo,
-  .driver,
-  .passanger {
-    font: 700 14px/21px 'montserrat', arial, helvetica, sans-serif;
+  .safety__list-text {
+    width: 47%;
+    margin: 0;
   }
 
-  .foraside {
-    font: 500 7px/12px 'montserrat', arial, helvetica, sans-serif;
+  .safety__list-text-front {
+    margin: 7% 0 5% 0;
+    font: 700 17px/21px 'montserrat', arial, helvetica, sans-serif;
   }
 
-  .fivestars {
-    font: 600 33px/36px 'montserratmedium', arial, helvetica, sans-serif;
-    background: url(img/shield.svg) no-repeat 1% 67%;
+  .safety__list-text-aside {
+    margin: 11% 0 5% 0;
+    font: 700 17px/21px 'montserrat', arial, helvetica, sans-serif;
   }
 
-  .security {
-    font: 400 21px/30px 'montserratthin', arial, helvetica, sans-serif;
+  .safety__list-text-asidetwo {
+    margin: 6% 0 5% 0;
+    font: 700 17px/21px 'montserrat', arial, helvetica, sans-serif;
   }
 
-  .info__moreinfo {
-    font: 400 9px/13px 'montserrat', arial, helvetica, sans-serif;
+  .safety__list-text-foraside {
+    letter-spacing: 0.05em;
+    font: 500 10px/12px 'montserrat', arial, helvetica, sans-serif;
   }
 
-  .info__button {
-    font: 500 11px/14px 'montserrat', arial, helvetica, sans-serif;
+  .safety__list-text-driver {
+    margin: 5% 0 5% 0;
+    font: 700 17px/21px 'montserrat', arial, helvetica, sans-serif;
+  }
+
+  .safety__list-text-passanger {
+    margin: 10% 0 5% 0;
+    font: 700 17px/21px 'montserrat', arial, helvetica, sans-serif;
+  }
+
+  .safety__list-objects {
+    width: 48%;
+    margin: 3% 4.5% 5.5% 0;
+  }
+
+  .safety__list-objects-stars {
+    width: 90%;
+    height: 23%;
+    background: url(img/star.svg) space;
+    background-size: 19%;
+  }
+
+  .safety__fivestars {
+    font: 600 49px/45px 'montserratmedium', arial, helvetica, sans-serif;
+    margin: 0 0 0 3.5%;
+    letter-spacing: 0.04em;
+    padding: 2% 0 2% 30%;
+    background: url(img/shield.svg) no-repeat 7% 66%;
+  }
+
+  .safety__fivestars_security {
+    font: 400 25px/30px 'montserratthin', arial, helvetica, sans-serif;
+  }
+
+  .safety__info {
+    margin: 16% 0 6% 0;
+    width: 100%;
+  }
+
+  .safety__info-moreinfo {
+    margin: 0;
+    padding: 1% 0 1% 9.8%;
+    font: 400 12px/16px 'montserrat', arial, helvetica, sans-serif;
+    background: url(img/icircle.svg) no-repeat 2% 47%;
+  }
+
+  .safety__info-button {
+    margin: 0% 1% 0 0;
+    padding: 2.5% 10% 3% 13%;
+    border: 2px solid #fff;
+    font: 500 13px/14px 'montserrat', arial, helvetica, sans-serif;
+  }
+
+  .safety__details {
+    position: relative;
+    width: 100%;
+    height: 106vh;
+    background: url(img/backmodel.svg) no-repeat 100% 19%;
+    background-size: 55vw;
+  }
+
+  .safety__details-car {
+    position: relative;
+    width: 100%;
+    height: 106vh;
+    background: url(img/car-frame.svg) no-repeat 89% 55%;
+    background-size: 73vw;
+  }
+}
+
+@media (max-width: 1375px) {
+  .logo {
+    margin: 3% 6% 4% 0;
+    background: url(img/teslamark.svg) no-repeat 0% 100%;
+    background-size: 77%;
+  }
+
+  .menu {
+    width: 44vw;
+    margin: 4% 0 0 0;
+  }
+
+  .menu__item {
+    font: 600 13px/18px 'montserratbold', arial, helvetica, sans-serif;
+  }
+
+  .menu-corner {
+    margin: 3.6% 0 5% 0%;
+    width: 17vw;
+    font: 600 13px/15px 'montserratbold', arial, helvetica, sans-serif;
+  }
+
+  .menu-corner__item {
+    margin: 0 10% 0 0;
+  }
+
+  .menu-corner__enter {
+    margin: 0 0% 0 3%;
+  }
+
+  .menu-corner__btn {
+    margin: 1% 0 0 0;
+  }
+
+  .main__title {
+    font: 600 74px/91px 'montserratmedium', arial, helvetica, sans-serif;
+  }
+
+  .main__subtitle {
+    font: 400 14px/16px 'montserratregular', arial, helvetica, sans-serif;
+  }
+
+  .main__undercar {
+    width: 62vw;
+  }
+
+  .main__undercar-speed {
+    padding: 0 0 3% 12%;
+    font: 600 30px/33px 'montserratsemibold', arial, helvetica, sans-serif;
+    background: url(img/clock.svg) no-repeat 12% 37%;
+    background-size: 28%;
+  }
+
+  .main__undercar-speed_sec {
+    font: 600 17px/21px 'montserratsemibold', arial, helvetica, sans-serif;
+  }
+
+  .main__undercar-speed_limit {
+    width: 8vw;
+    font: 400 10px/11px 'montserrat', arial, helvetica, sans-serif;
+  }
+
+  .main__undercar-distance {
+    width: 12vw;
+    font: 600 30px/36px 'montserratsemibold', arial, helvetica, sans-serif;
+    background: url(img/snake.svg) no-repeat 2% 70%;
+    background-size: 21%;
+  }
+
+  .main__undercar-distance_km {
+    font: 600 18px/22px 'montserratsemibold', arial, helvetica, sans-serif;
+  }
+
+  .main__undercar-distance_savings {
+    width: 7vw;
+    font: 400 11px/10px 'montserrat', arial, helvetica, sans-serif;
+  }
+
+  .main__undercar-drive {
+    margin: 2% 1% 0 0;
+    width: 10vw;
+    padding: 1% 0% 1% 5%;
+    font: 700 12px/16px 'montserratbold', arial, helvetica, sans-serif;
+  }
+
+  .cars__title {
+    font: 600 53px/66px 'montserratmedium', arial, helvetica, sans-serif;
+  }
+
+  .cars__describtion {
+    height: 114vh;
+  }
+
+  .cars__describtion-title {
+    font: 500 24px/32px 'montserrat', arial, helvetica, sans-serif;
+  }
+
+  .cars__describtion-body {
+    font: 500 12px/17px 'montserrat', arial, helvetica, sans-serif;
+    margin: 8% 0 13% 3%;
+  }
+
+  .cars__describtion-option {
+    font: 600 27px/34px 'montserratsemibold', arial, helvetica, sans-serif;
+    background-size: 18%;
+  }
+
+  .cars__describtion-option-dm {
+    font: 100 17px/20px 'montserratthin', arial, helvetica, sans-serif;
+  }
+
+  .cars__describtion-option-under {
+      font: 100 11px/11px 'montserratthin', arial, helvetica, sans-serif;
+  }
+
+  .cars__describtion-wifi {
+    font: 100 18px/20px 'montserratthin', arial, helvetica, sans-serif;
+    background-size: 15%;
+  }
+
+  .cars__describtion-wifi-under {
+    font: 100 11px/11px 'montserratthin', arial, helvetica, sans-serif;
+  }
+
+  .cars__describtion-size {
+    font: 600 27px/36px 'montserratsemibold', arial, helvetica, sans-serif;
+    background-size: 19%;
+  }
+
+  .cars__describtion-size_v {
+    font: 400 17px/22px 'montserrat', arial, helvetica, sans-serif;
+  }
+
+  .cars__describtion-size_under {
+    font: 100 11px/13px 'montserratthin', arial, helvetica, sans-serif;
+  }
+
+  .cars__describtion-info {
+    font: 500 10px/17px 'montserrat', arial, helvetica, sans-serif;
+  }
+
+  .cars__describtion-info-more {
+    margin: 6.9% 0 8% 1%;
+    padding: 1% 0 2% 9%;
+    background: url(img/icircle.svg) no-repeat 1% 20%;
+    background-size: 15%;
+  }
+
+  .cars__describtion-info-button {
+    margin: 5% 6% 7% 0%;
+    padding: 2.5% 10% 2.5% 11%;
+  }
+
+  .safety {
+    height: 114vh;
+  }
+
+  .safety__describtion {
+    height: 104.5vh;
+    padding: 3% 3.6% 3% 2.5%;
+  }
+
+  .safety__describtion-title {
+    font: 500 22px/28px 'montserratsemibold', arial, helvetica, sans-serif;
+  }
+
+  .safety__describtion-text {
+    font: 500 11px/18px 'montserrat', arial, helvetica, sans-serif;
+    margin: 10% 0 0 6%;
+    width: 23vw;
+    height: 26vh;
+  }
+
+  .safety__describtion-option {
+    font: 500 21px/28px 'montserratmedium', arial, helvetica, sans-serif;
+    margin: 3% 0 3.5% 6.5%;
+  }
+
+  .safety__list {
+    margin: 2% 0 17% 5.8%;
+  }
+
+  .safety__list-text-front,
+  .safety__list-text-aside,
+  .safety__list-text-asidetwo,
+  .safety__list-text-driver,
+  .safety__list-text-passanger {
+    font: 700 13px/21px 'montserrat', arial, helvetica, sans-serif;
+  }
+
+  .safety__list-text-foraside {
+    font: 500 8px/10px 'montserrat', arial, helvetica, sans-serif;
+  }
+
+  .safety__fivestars {
+    font: 600 27px/34px 'montserratmedium', arial, helvetica, sans-serif;
+    background: url(img/shield.svg) no-repeat 7% 66%;
+    background-size: 19%;
+  }
+
+  .safety__fivestars_security {
+    font: 400 17px/19px 'montserratthin', arial, helvetica, sans-serif;
+  }
+
+  .safety__info-moreinfo {
+    padding: 1% 0 1% 11.8%;
+    font: 400 10px/12px 'montserrat', arial, helvetica, sans-serif;
+    width: 44%;
+    background: url(img/icircle.svg) no-repeat 2% 47%;
+    background-size: 13%;
+  }
+
+  .safety__info-button {
+    margin: 0% 1% 0 0;
+    padding: 2.5% 8% 2.5% 10%;
+    font: 500 10px/13px 'montserrat', arial, helvetica, sans-serif;
   }
 }
 
@@ -831,39 +1740,45 @@
     width: 96%;
   }
 
+  .logo {
+    margin: 5% 6% 4% 0;
+    background: url(img/teslamark.svg) no-repeat 0% 100%;
+    background-size: 100%;
+  }
+
   .menu {
     display: none;
   }
 
-  .menu_corner__item {
+  .menu-corner__item {
     display: none;
   }
 
-  .menu_corner__enter {
+  .menu-corner__enter {
     display: none;
   }
 
-  .menu_corner {
+  .menu-corner {
     display: flex;
     justify-content: flex-end;
-    margin: 4.2% 3.5% 11.5% 0;
+    margin: 5.5% 3.5% 11.5% 0;
   }
 
-  .menu__btn > span,
-  .menu__btn > span::before,
-  .menu__btn > span::after {
+  .menu-corner__btn > span,
+  .menu-corner__btn > span::before,
+  .menu-corner__btn > span::after {
     display: block;
     position: absolute;
     width: 33px;
     height: 3px;
   }
 
-  .menu__btn > span::before {
+  .menu-corner__btn > span::before {
     content: '';
     top: -9px;
   }
 
-  .menu__btn > span::after {
+  .menu-corner__btn > span::after {
     content: '';
     top: 9px;
  }
@@ -872,77 +1787,84 @@
     display: block;
     width: 90%;
     margin: auto;
-    background: no-repeat url(img/teslaback.svg) 35% 19%;
+    background: no-repeat url(img/teslaback.svg) 35% 17%;
     background-size: 108vw;
   }
 
-  .car {
-    width: 100%;
-    margin: 14% 0 0 0;
+  .main__title {
+    font: 600 91px/104px 'montserratmedium', arial, helvetica, sans-serif;
+    margin: 8% 0 0 0;
   }
 
-  .undercar {
+  .main__subtitle {
+    font: 400 17px/14px 'montserratregular', arial, helvetica, sans-serif;
+  }
+
+  .main__car {
+    width: 100%;
+    margin: 11% 0 0 0;
+  }
+
+  .main__undercar {
     display: flex;
     flex-direction: row;
     flex-flow: wrap;
     align-items: center;
     width: 66vw;
-    height: 41vh;
+    height: 33vh;
     margin: auto;
   }
 
-  .undercar__speed {
+  .main__undercar-speed {
     display: flex;
     justify-content: flex-start;
     align-items: center;
     width: 21vw;
-    margin: 2% 8% 0 0;
-    padding: 0 0 4% 19%;
+    margin: 1% 6% 0 0;
+    padding: 0 0 6% 19%;
     font: 600 50px/60px 'montserratsemibold', arial, helvetica, sans-serif;
-    background: url(img/clock.svg) no-repeat 3% 83%;
+    background: url(img/clock.svg) no-repeat 3% 117%;
     background-size: 30%;
   }
 
-  .speed-sec {
+  .main__undercar-speed_sec {
     display: inline;
-    position: absolute;
-    margin: 3% 0 0 33%;
-    font: 600 20px/25px 'montserratsemibold', arial, helvetica, sans-serif;
+    margin: 4% 0 0 7%;
+    font: 600 19px/19px 'montserratsemibold', arial, helvetica, sans-serif;
   }
 
-  .speed-limit {
+  .main__undercar-speed_limit {
     display: flex;
-    position: absolute;
-    margin: 28% 0 0 0;
+    margin: 0% 0 0 0;
+    width: 16vw;
     font: 400 12px/15px 'montserrat', arial, helvetica, sans-serif;
   }
 
-  .speed-distance {
+  .main__undercar-distance {
     width: 19vw;
-    margin: 4% 0 0 0;
+    margin: 5% 0 0 0;
     height: 9vh;
-    padding: 0 0 7% 12%;
-    font: 600 50px/60px 'montserratsemibold', arial, helvetica, sans-serif;
-    background: url(img/road.svg) no-repeat 0% 50%;
- }
+    padding: 0 0 7% 13.5%;
+    font: 600 50px/51px 'montserratsemibold', arial, helvetica, sans-serif;
+    background: url(img/road.svg) no-repeat 5% 44%;
+  }
 
-  .speed-km {
+  .main__undercar-distance_km {
     display: inline-block;
-    position: absolute;
-    margin: 3% 0 0 2%;
-    font: 600 20px/24px 'montserratsemibold', arial, helvetica, sans-serif;
+    margin: 8% 0 0 8%;
+    font: 600 20px/26px 'montserratsemibold', arial, helvetica, sans-serif;
   }
 
-  .speed-savings {
+  .main__undercar-distance_savings {
     display: flex;
-    position: absolute;
-    font: 400 13px/15px 'montserrat', arial, helvetica, sans-serif;
+    font: 400 13px/27px 'montserrat', arial, helvetica, sans-serif;
+    width: 15vw;
   }
 
-  .speed-drive {
+  .main__undercar-drive {
     display: flex;
     text-align: center;
-    margin: 2% 0% 0 9%;
+    margin: 8% 0 0 9%;
     width: 20vw;
     height: 2vh;
     color: #e51937;
@@ -953,13 +1875,13 @@
     background: url(img/wheelred.svg) no-repeat 0% 30%;
   }
 
-  .speed-button {
+  .main__undercar-button {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 29vw;
-    height: 10vh;
-    margin: 0;
+    height: 9vh;
+    margin: 8% 1% 1% 0;
     border: none;
     font: 700 16px/19px 'montserratbold', arial, helvetica, sans-serif;
     color: #fff;
@@ -967,24 +1889,24 @@
     text-decoration: none;
   }
 
-  .pointer {
-    margin: 6% 0 0 48%;
+  .main__pointer {
+    margin: 8% 0 0 0%;
   }
 
   .cars {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background: url(img/carinsideipad.svg) no-repeat 0% 12%;
+    background: url(img/carinsideipad.svg) no-repeat 0% 9%;
     background-size: 100%;
     width: 100%;
-    margin: 1% 0 0 0;
+    margin: 0;
   }
 
   .cars__title {
     display: flex;
     justify-content: flex-end;
-    margin: 9% 0 0 0;
+    margin: 7.5% 0 0 0;
     width: 94vw;
     font: 600 71px/82px 'montserratmedium', arial, helvetica, sans-serif;
   }
@@ -1006,7 +1928,7 @@
     align-items: flex-end;
     width: 95.5vw;
     height: 100%;
-    margin: 53.5% 0 0 0;
+    margin: 50% 0 0 0;
     padding: 1.7% 1.5% 3% 3%;
   }
 
@@ -1019,62 +1941,83 @@
   .cars__describtion-part {
     display: inline-block;
     width: 40vw;
+    height: 41vh;
+    margin: 0;
   }
 
   .cars__describtion-option {
     display: inline-block;
     margin: 0;
-    padding: 0 0 3% 21%;
-    background: url(img/screen.svg) no-repeat 6% 90%;
+    font: 600 32px/43px 'montserratsemibold', arial, helvetica, sans-serif;
+    padding: 0 0 9% 21%;
+    background: url(img/screen.svg) no-repeat 6% 44%;
+  }
+
+  .cars__describtion-option-dm {
+    font: 100 21px/20px 'montserratthin', arial, helvetica, sans-serif;
+  }
+
+  .cars__describtion-option-under {
+    font: 100 12px/12px 'montserratthin', arial, helvetica, sans-serif;
   }
 
   .cars__describtion-wifi {
     display: block;
-    margin: 8% 0 0 0;
-    padding: 0 0 5% 23%;
+    font: 100 20px/19px 'montserratthin', arial, helvetica, sans-serif;
+    margin: 2% 0 0 0;
+    padding: 0 0 7% 23%;
     background: url(img/wifi.svg) no-repeat 2% 26%;
+  }
+
+  .cars__describtion-wifi-under {
+    font: 100 12px/13px 'montserratthin', arial, helvetica, sans-serif;
+    margin: 1% 0 0 0;
   }
 
   .cars__describtion-size {
     display: inline-block;
-    margin: 2% 0 0% 0;
-    padding: 0% 0 0% 22%;
-    background: url(img/bag.svg) no-repeat 6% 56%;
-    font: 600 35px/49px 'montserratsemibold', arial, helvetica, sans-serif
+    margin: 0;
+    padding: 1% 0 3% 22%;
+    background: url(img/bag.svg) no-repeat 6% 35%;
+    font: 600 34px/42px 'montserratsemibold', arial, helvetica, sans-serif;
   }
 
-  .cars__describtion-size-v {
+  .cars__describtion-size_v {
     display: inline-block;
-    font: 400 20px/24px 'montserrat', arial, helvetica, sans-serif;
+    font: 400 20px/37px 'montserrat', arial, helvetica, sans-serif;
     margin: 0;
   }
 
-  .cars__describtion-size-under {
+  .cars__describtion-size_under {
     display: block;
-    font: 100 12px/15px 'montserratthin', arial, helvetica, sans-serif;
+    font: 100 12px/18px 'montserratthin', arial, helvetica, sans-serif;
   }
 
   .cars__describtion-info {
     display: flex;
-    justify-content: space-around;
+    justify-content: normal;
+    width: 75%;
     margin: 6% 12% 0 12%;
     font: 500 15px/15px 'montserrat', arial, helvetica, sans-serif;
   }
 
   .cars__describtion-info-more {
     display: flex;
-    margin: 6% 0 7% 3%;
-    padding: 2% 0 2% 11%;
+    margin: 5.5% 5% 7% 0%;
+    padding: 2% 0 2% 16%;
     width: 22vw;
-    font: 500 15px/15px 'montserrat', arial, helvetica, sans-serif;
-    background: url(img/icircle.svg) no-repeat 7% 25%;
-    background-size: 14%;
+    font: 500 15px/14px 'montserrat', arial, helvetica, sans-serif;
+    letter-spacing: 0.12em;
+    background: url(img/icircle.svg) no-repeat 20% 48%;
+    background-size: 12%;
   }
 
   .cars__describtion-info-button {
     display: flex;
-    margin: 4% 7% 6% 0%;
-    padding: 3% 11.5% 2% 11.5%;
+    margin: 3.5% 0% 6% 0%;
+    width: 16vh;
+    padding: 3% 12.5% 2% 11.5%;
+    padding: 3% 9.5% 2% 11.5%;
     font: 500 15px/21px 'montserrat', arial, helvetica, sans-serif;
   }
 
@@ -1085,7 +2028,10 @@
     width: 100vw;
   }
 
-  .safety__descrbition {
+  .safety__describtion {
+    display: flex;
+    flex-direction: column;
+    flex-flow: wrap;
     text-align: left;
     align-items: flex-start;
     width: 93.5vw;
@@ -1094,141 +2040,160 @@
     padding: 8% 2% 8.5% 4.5%;
   }
 
-  .safety__body {
-    display: inline-block;
-    position: relative;
-    width: 45vw;
-    margin: 0 3% 0 0;
+  .safety__describtion-body {
+    margin: 0 5% 0 0;
+    width: 53vh;
+    letter-spacing: 0.05em;
+    height: 38vh;
+    font: 500 16px/18px 'montserrat', arial, helvetica, sans-serif;
   }
 
   .safety__describtion-title {
     display: inline-block;
-    font: 600 30px/36px 'montserratbold', arial, helvetica, sans-serif;
+    font: 500 30px/36px 'montserratbold', arial, helvetica, sans-serif;
     margin: 0;
   }
 
-  .safety__describtion-body {
-    margin: 4% 0 0 0;
-    width: 53vh;
-    letter-spacing: 0.05em;
-    height: 24vh;
-    font: 500 16px/18px 'montserrat', arial, helvetica, sans-serif;
+  .safety__describtion-text {
+    font: 500 15px/18px 'montserrat', arial, helvetica, sans-serif;
+    margin: 5% 0 0 0%;
+    width: 93%;
+    height: 26vh;
   }
 
   .safety__describtion-part {
-    display: inline-block;
-    position: absolute;
-    width: 44vw;
-    height: 45vh;
+    display: flex;
+    flex-flow: wrap;
+    width: 42vw;
+    height: 38vh;
   }
 
   .safety__details {
-    position: relative;
     display: flex;
     justify-content: center;
     width: 100%;
     height: 100%;
-    background: url(img/backmodel.svg) no-repeat 53% 10%;
+    background: url(img/backmodel.svg) no-repeat 53% 12%;
     background-size: 76vw;
   }
 
   .safety__details-car {
-    position: relative;
     display: flex;
     width: 100%;
     height: 100%;
-    background: url(img/car-frame-ipad.svg) no-repeat 0% 20%;
+    background: url(img/car-frame-ipad.svg) no-repeat 0% 26%;
     background-size: 96vw;
   }
 
   .safety__describtion-option {
-    display: inline-block;
     text-align: left;
-    margin: 0% 0 3.5% 6.5%;
+    width: 49vw;
+    height: 7vh;
+    margin: 0 0 0 6.5%;
     font: 500 30px/36px 'montserratmedium', arial, helvetica, sans-serif;
     letter-spacing: 0.09em;
-   }
+  }
 
   .safety__list {
     display: flex;
-    justify-content: space-between;
-    flex-direction: row;
-    align-content: space-between;
+    width: 40vw;
     padding: 0 3% 0 0;
-    margin: 1% 0 0% 5.8%;
-   }
+    margin: 0% 0 0% 5.8%;
+  }
 
   .safety__list-text {
-    width: 51%;
-    margin: 0;
-   }
+    width: 20vw;
+    margin: 4% 0 0 0;
+  }
 
-  .front,
-  .aside,
-  .asidetwo,
-  .driver,
-  .passanger {
+  .safety__list-text-front,
+  .safety__list-text-aside,
+  .safety__list-text-asidetwo,
+  .safety__list-text-driver,
+  .safety__list-text-passanger {
     letter-spacing: 0.05em;
     font: 700 17px/21px 'montserrat', arial, helvetica, sans-serif;
    }
 
-   .foraside {
-     font: 500 10px/10px 'montserrat', arial, helvetica, sans-serif;
+  .safety__list-text-foraside {
+    font: 500 10px/10px 'montserrat', arial, helvetica, sans-serif;
    }
 
-  .safety__list-stars {
+  .safety__list-objects {
     flex-direction: column;
     justify-content: space-between;
-    width: 48%;
-    margin: 3% 4.5% 5.5% 0;
+    width: 20vw;
+    margin: 6% 4.5% 5.5% 0;
    }
 
-  .stars {
+  .safety__list-objects-stars {
     width: 98%;
     height: 23%;
     background-size: 19%;
    }
 
-  .fivestars {
+  .safety__fivestars {
     display: none;
   }
 
-  .info {
-    display: flex;
+  .safety__info {
     justify-content: normal;
-    margin: 9% 10% 0% 17%;
-    width: 62vw;
-    height: 9vh;
+    margin: 9% 0 0% 16%;
+    width: 100%;
   }
 
-  .info__moreinfo {
-    display: flex;
-    margin: 0 7% 0 0;
-    width: 21vw;
-    padding: 2% 0 1% 9%;
-    letter-spacing: 0.2em;
-    align-items: center;
-    font: 400 14px/20px 'montserrat', arial, helvetica, sans-serif;
-    background: url(img/icircle.svg) no-repeat 0% 55%;
-    background-size: 15%;
+  .safety__info-moreinfo {
+    padding: 2% 0 1% 7.8%;
+    font: 400 16px/20px 'montserrat', arial, helvetica, sans-serif;
+    width: 26vw;
+    background: url(img/icircle.svg) no-repeat 3% 65%;
+    background-size: 13%;
+    letter-spacing: 0.1em;
   }
 
-  .info__button {
-    display: inline;
-    margin: 0;
-    width: 18vw;
-    padding: 4% 2% 0 14%;
-    font: 600 15px/15px 'montserrat', arial, helvetica, sans-serif;
+  .safety__info-button {
+    margin: 0% 0% 0 0;
+    padding: 2.5% 10% 2.5% 10%;
+    font: 500 16px/20px 'montserrat', arial, helvetica, sans-serif;
   }
 }
 
 @media (max-width: 765px) {
+  .main__undercar {
+    width: 72vw;
+  }
+
+  .main__undercar-speed_sec {
+    display: inline;
+    margin: 16% 0 0 7%;
+    font: 600 19px/19px 'montserratsemibold', arial, helvetica, sans-serif;
+  }
+
+  .main__undercar-distance {
+    width: 22vw;
+  }
+
+  .main__undercar-distance_km {
+    margin: 16% 0 0 8%;
+  }
+
+  .main__car {
+    width: 100%;
+    height: 100%;
+  }
+
+  .cars {
+    background: url(img/carinsideipad.svg) no-repeat 0% 0%;
+    background-size: 115%;
+  }
+
   .cars__describtion-title {
-    font: 500 25px/35px 'montserrat', arial, helvetica, sans-serif;
+    font: 500 22px/35px 'montserrat', arial, helvetica, sans-serif;
   }
 
   .cars__describtion-body {
     width: 39vw;
+    font: 500 12px/16px 'montserrat', arial, helvetica, sans-serif;
   }
 
   .cars__describtion-info-more {
@@ -1238,31 +2203,65 @@
   }
 
   .safety__describtion-title {
-    font: 600 25px/30px 'montserratbold', arial, helvetica, sans-serif;
+    font: 500 23px/27px 'montserratbold', arial, helvetica, sans-serif;
+    width: 43vw;
   }
 
   .safety__describtion-body {
-    width: 39vw;
+    margin: 0;
+    width: 48vh;
   }
 
-  .info__moreinfo {
-    width: 23vw;
-    letter-spacing: 0.1em;
-    font: 400 13px/20px 'montserrat', arial, helvetica, sans-serif;
+  .safety__describtion-text {
+    width: 35vw;
+    font: 500 12px/16px 'montserrat', arial, helvetica, sans-serif;
   }
+
+  .safety__describtion-option {
+    font: 500 23px/35px 'montserratmedium', arial, helvetica, sans-serif;
+  }
+
+  .safety__list-text-front,
+  .safety__list-text-aside,
+  .safety__list-text-asidetwo,
+  .safety__list-text-driver,
+  .safety__list-text-passanger {
+    font: 700 13px/18px 'montserrat', arial, helvetica, sans-serif;
+   }
+
+  .safety__list-text-foraside {
+    font: 500 7px/10px 'montserrat', arial, helvetica, sans-serif;
+   }
+
+   .safety__list-objects-stars {
+     height: 20%;
+   }
+
+  .safety__info-moreinfo {
+    font: 400 12px/15px 'montserrat', arial, helvetica, sans-serif;
+    background: url(img/icircle.svg) no-repeat 3% 65%;
+    background-size: 11%;
+   }
+
+  .safety__info-button {
+    margin: 0% 0% 0 0;
+    padding: 2.5% 10% 2.5% 10%;
+    font: 500 12px/13px 'montserrat', arial, helvetica, sans-serif;
+   }
 }
 
 @media (max-width: 600px) {
   .header {
     width: 96%;
-    margin: 15% 0 0 0;
+    margin: 20% 0 0 0;
+    height: 8vh;
   }
 
   .logo {
     display: inline-block;
     width: 166px;
     height: 51px;
-    margin: 0.5% 0 0% 0;
+    margin: 0;
     background: no-repeat url(img/teslamark.svg);
     background-size: 86%;
   }
@@ -1271,42 +2270,42 @@
     display: none;
   }
 
-  .menu_corner__item {
+  .menu-corner__item {
     display: none;
   }
 
-  .menu_corner__enter {
+  .menu-corner__enter {
     display: none;
   }
 
-  .menu_corner {
+  .menu-corner {
     display: flex;
     justify-content: flex-end;
     margin: 6% 3.5% 0% 0;
   }
 
-  .menu__btn {
+  .menu-corner__btn {
     margin: 0;
     padding: 0;
     width: 16px;
     height: 0px;
   }
 
-  .menu__btn > span,
-  .menu__btn > span::before,
-  .menu__btn > span::after {
+  .menu-corner__btn > span,
+  .menu-corner__btn > span::before,
+  .menu-corner__btn > span::after {
     display: block;
     position: absolute;
     width: 23px;
     height: 2px;
   }
 
-  .menu__btn > span::before {
+  .menu-corner__btn > span::before {
     content: '';
     top: -6px;
   }
 
-  .menu__btn > span::after {
+  .menu-corner__btn > span::after {
     content: '';
     top: 6px;
   }
@@ -1315,7 +2314,7 @@
     display: block;
     width: 94%;
     margin: auto;
-    background: no-repeat url(img/teslaback.svg) 38% 23%;
+    background: no-repeat url(img/teslaback.svg) 38% 22%;
     background-size: 113vw;
   }
 
@@ -1330,12 +2329,12 @@
     letter-spacing: 0.07em;
   }
 
-  .car {
+  .main__car {
     width: 100%;
     margin: 15% 0 0 0;
   }
 
-  .undercar {
+  .main__undercar {
     display: flex;
     flex-direction: row;
     flex-flow: wrap;
@@ -1345,52 +2344,50 @@
     margin: auto;
   }
 
-  .undercar__speed {
+  .main__undercar-speed {
     width: 22vw;
-    margin: 4% 10% 0 0;
+    margin: 6% 10% 0 0;
     padding: 0 0 4% 21%;
     font: 600 27px/32px 'montserratsemibold', arial, helvetica, sans-serif;
-    background: url(img/clock.svg) no-repeat 9% 100%;
-    background-size: 8vh;
+    background: url(img/clock.svg) no-repeat 11% 37%;
+    background-size: 7vh;
   }
 
-  .speed-sec {
-    margin: 5% 0 0 32%;
+  .main__undercar-speed_sec {
+    margin: 13% 0 0 10%;
     font: 600 16px/17px 'montserratsemibold', arial, helvetica, sans-serif;
   }
 
-  .speed-limit {
-    margin: 30% 0 0 0;
+  .main__undercar-speed_limit {
+    margin: 3% 0 0 0;
+    width: 21vw;
     font: 400 10px/12px 'montserrat', arial, helvetica, sans-serif;
   }
 
-  .speed-distance {
-    width: 19vw;
+  .main__undercar-distance {
+    width: 22vw;
     margin: 4% 0 0 0;
     height: 6vh;
     padding: 0 0 4% 12%;
     font: 600 27px/32px 'montserratsemibold', arial, helvetica, sans-serif;
-    background: url(img/road.svg) no-repeat 1% 32%;
-    background-size: 5vh;
+    background: url(img/road.svg) no-repeat 2% 12%;
+    background-size: 4vh;
   }
 
-  .speed-km {
+  .main__undercar-distance_km {
     display: inline-block;
-    position: absolute;
-    margin: 3% 0 0 2%;
-    font: 600 15px/19px 'montserratsemibold', arial, helvetica, sans-serif;
+    margin: 10% 0 0 11%;
+    font: 600 16px/20px 'montserratsemibold', arial, helvetica, sans-serif;
   }
 
-  .speed-savings {
-    display: flex;
-    position: absolute;
-    font: 400 11px/12px 'montserrat', arial, helvetica, sans-serif;
+  .main__undercar-distance_savings {
+    font: 400 10px/14px 'montserrat', arial, helvetica, sans-serif;
   }
 
-  .speed-drive {
+  .main__undercar-drive {
     display: flex;
     text-align: center;
-    margin: 5% 6% 0 2%;
+    margin: 4% 6% 0 2%;
     width: 25vw;
     height: 1vh;
     color: #e51937;
@@ -1402,13 +2399,13 @@
     background-size: 4vh;
   }
 
-  .speed-button {
+  .main__undercar-button {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 43vw;
     height: 7vh;
-    margin: 6% 0 0 0;
+    margin: 4% 0 0 0;
     border: none;
     font: 500 12px/15px 'montserratbold', arial, helvetica, sans-serif;
     letter-spacing: 0.1em;
@@ -1417,18 +2414,18 @@
     text-decoration: none;
   }
 
-  .pointer {
-    margin: 8% 0 0 47%;
+  .main__pointer {
+    margin: 2% 0 0 2%;
   }
 
   .cars {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background: url(img/carinsideipad.svg) no-repeat 40% 0%;
-    background-size: 140%;
+    background: url(img/carinsideipad.svg) no-repeat 41% -5%;
+    background-size: 136%;
     width: 100%;
-    margin: 1% 0 0 0;
+    margin: 0;
   }
 
   .cars__title {
@@ -1440,8 +2437,8 @@
     align-items: flex-end;
     width: 95.5vw;
     height: 100%;
-    margin: 87.5% 0 0 0;
-    padding: 0.7% 1.5% 10% 3%;
+    margin: 83.5% 0 0 0;
+    padding: 3.7% 1.5% 10% 3%;
   }
 
   .cars__body {
@@ -1451,13 +2448,14 @@
   }
 
   .cars__describtion-title {
-    margin: 3% 0 0 5%;
+    margin: 0 0 0 5%;
     letter-spacing: 0.1em;
     font: 500 30px/44px 'montserrat', arial, helvetica, sans-serif;
   }
 
   .cars__describtion-body {
     margin: 2% 0 0 5%;
+    font: 500 16px/18px 'montserrat', arial, helvetica, sans-serif;
     width: 87vw;
   }
 
@@ -1478,31 +2476,32 @@
     height: 95vh;
   }
 
-  .safety__descrbition {
+  .safety__describtion {
     text-align: left;
     align-items: flex-start;
     width: 93.5vw;
     height: auto;
     margin: 78% 0 0 0;
-    padding: 5% 2% 13.5% 4.5%;
+    padding: 5% 2% 12.5% 4.5%;
   }
 
-  .safety__body {
+  .safety__describtion-body {
     display: inline-block;
-    position: relative;
     width: 94vw;
     margin: 0;
+    font: 500 18px/18px 'montserrat', arial, helvetica, sans-serif;
   }
 
   .safety__describtion-title {
     display: inline-block;
     margin: 1% 0 0 4%;
     width: 85vw;
-    font: 600 30px/36px 'montserratbold', arial, helvetica, sans-serif;
+    font: 500 30px/36px 'montserratbold', arial, helvetica, sans-serif;
   }
 
-  .safety__describtion-body {
+  .safety__describtion-text {
     margin: 3% 0 0 4%;
+    font: 500 15px/18px 'montserrat', arial, helvetica, sans-serif;
     width: 86vw;
   }
 
@@ -1511,7 +2510,6 @@
   }
 
   .safety__details {
-    position: relative;
     display: flex;
     justify-content: center;
     width: 100%;
@@ -1521,7 +2519,6 @@
   }
 
   .safety__details-car {
-    position: relative;
     display: flex;
     width: 100%;
     height: 100%;
@@ -1529,18 +2526,54 @@
     background-size: 96vw;
   }
 
-  .fivestars {
+  .safety__fivestars {
     display: none;
   }
 
-  .info {
+  .safety__info {
     display: none;
   }
 }
 
 @media (max-width: 355px) {
-  .speed-drive {
-    font: 700 10px/12px 'montserratbold', arial, helvetica, sans-serif;
+  .logo {
+    background-size: 68%;
+  }
+
+  .main__undercar-speed {
+    font: 600 24px/31px 'montserratsemibold', arial, helvetica, sans-serif;
+  }
+
+  .main__undercar-speed_sec {
+    font: 600 13px/16px 'montserratsemibold', arial, helvetica, sans-serif;
+  }
+
+  .main__undercar-speed_limit {
+    font: 400 7px/9px 'montserrat', arial, helvetica, sans-serif;
+  }
+
+  .main__undercar-distance {
+    font: 600 24px/29px 'montserratsemibold', arial, helvetica, sans-serif;
+  }
+
+  .main__undercar-distance_km {
+    font: 600 13px/18px 'montserratsemibold', arial, helvetica, sans-serif;
+  }
+
+  .main__undercar-distance_savings {
+    font: 400 7px/14px 'montserrat', arial, helvetica, sans-serif;
+  }
+
+  .main__undercar-drive {
+    font: 700 9px/11px 'montserratbold', arial, helvetica, sans-serif;
+    background: url(img/wheelred.svg) no-repeat 4% 50%;
+    background-size: 3vh;
+  }
+
+  .main__undercar-button {
+    width: 41vw;
+    height: 6vh;
+    font: 500 10px/12px 'montserratbold', arial, helvetica, sans-serif;
   }
 
   .cars__describtion-title {
@@ -1552,7 +2585,7 @@
     font: 500 13px/17px 'montserrat', arial, helvetica, sans-serif;
   }
 
-  .safety__descrbition {
+  .safety__describtion {
     height: 43vh;
     padding: 5% 2% 23.5% 4.5%;
   }
@@ -1561,7 +2594,7 @@
     font: 600 22px/27px 'montserratbold', arial, helvetica, sans-serif;
   }
 
-  .safety__describtion-body {
+  .safety__describtion-text {
     font: 500 14px/18px 'montserrat', arial, helvetica, sans-serif;
   }
 }

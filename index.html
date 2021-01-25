@@ -8,26 +8,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="fonts.css">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="line.svg">
-    <link rel="stylesheet" href="teslamark.svg">
-    <link rel="stylesheet" href="teslaback.svg">
-    <link rel="stylesheet" href="clock.svg">
-    <link rel="stylesheet" href="snake.svg">
-    <link rel="stylesheet" href="wheel.svg">
-    <link rel="stylesheet" href="carinside.svg">
-    <link rel="stylesheet" href="screen.svg">
-    <link rel="stylesheet" href="wifi.svg">
-    <link rel="stylesheet" href="bag.svg">
-    <link rel="stylesheet" href="icircle.svg">
-    <link rel="stylesheet" href="star.svg">
-    <link rel="stylesheet" href="car-frame.svg">
-    <link rel="stylesheet" href="shield.svg">>
-    <link rel="stylesheet" href="backmodel.svg">
-    <link rel="stylesheet" href="road.svg">
-    <link rel="stylesheet" href="wheelred.svg">
-    <link rel="stylesheet" href="carinsideipad.svg">
-    <link rel="stylesheet" href="car-frame-ipad.svg">
-    <link rel="stylesheet" href="car-frame-iphone.svg">
   </head>
   <body class="body">
     <div class="wrapper">
@@ -41,11 +21,11 @@
         <a class="menu__item" href="#">Roadster</a>
         <a class="menu__item" href="#">Energy</a>
       </nav>
-      <nav class="menu_corner">
-        <a class="menu_corner__item" href="#">Магазин</a>
-        <a class="menu_corner__enter" href="#">Войти</a>
-        <input type="checkbox" id="menu__toggle"/>
-        <label class="menu__btn" for="menu__toggle">
+      <nav class="menu-corner">
+        <a class="menu-corner__item" href="#">Магазин</a>
+        <a class="menu-corner__enter" href="#">Войти</a>
+        <input type="checkbox" id="menu-corner__toggle"/>
+        <label class="menu-corner__btn" for="menu-corner__toggle">
           <span></span>
         </label>
       </nav>
@@ -55,26 +35,26 @@
           Model S
         </h1>
         <p class="main__subtitle">Добро пожаловать в будущее!</p>
-        <img class="car" src="img/car.png" alt="models">
-          <div class="undercar">
-            <div class="undercar__speed">
+        <img class="main__car" src="img/car.png" alt="models">
+          <div class="main__undercar">
+            <div class="main__undercar-speed">
               2,7
-              <span class="speed-sec">сек</span>
-              <span class="speed-limit">0-100&nbsp;км/час</span>
+              <span class="main__undercar-speed_sec">сек</span>
+              <span class="main__undercar-speed_limit">0-100&nbsp;км/час</span>
             </div>
-              <div class="speed-distance">
-                632
-                <span class="speed-km">км</span>
-                <span class="speed-savings">запас хода</span>
+            <div class="main__undercar-distance">
+              632
+              <span class="main__undercar-distance_km">км</span>
+              <span class="main__undercar-distance_savings">запас хода</span>
               </div>
-              <div class="speed-drive">
-                ТЕСТ ДРАЙВ
-              </div>
-              <a class="speed-button" href="#">
-                ЗАКАЗАТЬ 
-              </a>
+            <div class="main__undercar-drive">
+              ТЕСТ ДРАЙВ
+            </div>
+            <a class="main__undercar-button" href="#">
+              ЗАКАЗАТЬ 
+            </a>
           </div>
-          <div class="pointer">
+          <div class="main__pointer">
           </div>
       </section>
       <section class="cars">
@@ -112,10 +92,10 @@
             </div>
             <div class="cars__describtion-size">
               894
-              <span class="cars__describtion-size-v">
+              <span class="cars__describtion-size_v">
                 литра
               </span>
-              <span class="cars__describtion-size-under">
+              <span class="cars__describtion-size_under">
                 Объем грузового<br/>пространства
               </span>
             </div>
@@ -131,12 +111,12 @@
         </div>
       </section>
       <section class="safety">
-        <div class="safety__descrbition">
-          <div class="safety__body">
+        <div class="safety__describtion">
+          <div class="safety__describtion-body">
             <div class="safety__describtion-title">
               Самый безопасный автомобиль в мире
             </div>
-            <div class="safety__describtion-body">
+            <div class="safety__describtion-text">
               Модель S достигла наивысшей оценки безопасности любого автомобиля,
               когда-либо испытанного, и установила рекорд по наименьшей
               вероятности травмы пассажиров - от несчастных случаев
@@ -148,32 +128,32 @@
               Оценка защиты:
             </div>
             <div class="safety__list">
-            <div class="safety__list-text">
-              <span class="front">СПЕРЕДИ</span>
-              <span class="aside">СБОКУ</span>
-              <span class="asidetwo">СБОКУ</span>
-              <span class="foraside">(СТОЙКА)</span>
-              <span class="driver">ВОДИТЕЛЬ</span>
-              <span class="passanger">ПАССАЖИР</span>
-            </div>
-            <div class="safety__list-stars">
-              <span class="stars"></span>
-              <span class="stars"></span>
-              <span class="stars"></span>
-              <span class="stars"></span>
-              <span class="stars"></span>
-            </div>
+              <div class="safety__list-text">
+                <span class="safety__list-text-front">СПЕРЕДИ</span>
+                <span class="safety__list-text-aside">СБОКУ</span>
+                <span class="safety__list-text-asidetwo">СБОКУ</span>
+                <span class="safety__list-text-foraside">(СТОЙКА)</span>
+                <span class="safety__list-text-driver">ВОДИТЕЛЬ</span>
+                <span class="safety__list-text-passanger">ПАССАЖИР</span>
+              </div>
+              <div class="safety__list-objects">
+                <span class="safety__list-objects-stars"></span>
+                <span class="safety__list-objects-stars"></span>
+                <span class="safety__list-objects-stars"></span>
+                <span class="safety__list-objects-stars"></span>
+                <span class="safety__list-objects-stars"></span>
+              </div>
             </div>
           </div>
-          <div class="fivestars">
+          <div class="safety__fivestars">
             5 звезд
-            <span class="security">безопасности</span>
+           <span class="safety__fivestars_security">безопасности</span>
           </div>
-          <div class="info">
-            <span class="info__moreinfo">
+          <div class="safety__info">
+            <span class="safety__info-moreinfo">
               УЗНАТЬ БОЛЬШЕ
             </span>
-            <a class="info__button" href="#">
+            <a class="safety__info-button" href="#">
               ЗАКАЗАТЬ
             </a>
           </div>
