@@ -841,7 +841,7 @@
     position: relative;
     display: flex;
     width: 100vw;
-    height: 1480px;
+    height: 1460px;
     background: url(img/backmodel.svg) no-repeat 100% 22%;
     background-size: 56%;
   }
@@ -1082,7 +1082,7 @@
   }
 
   .safety__details {
-    height: 110vh;
+    height: 1240px;
     background-size: 54%;
   }
 
@@ -1481,7 +1481,7 @@
   }
 
   .safety__describtion {
-    height: 43.5vh;
+    height: auto;
     padding: 3% 3.6% 3% 2.5%;
   }
 
@@ -1541,7 +1541,7 @@
   }
 
   .safety__details {
-    height: 47vh;
+    height: 659px;
     background: url(img/backmodel.svg) no-repeat 100% 19%;
     background-size: 54%;
   }
@@ -1583,7 +1583,7 @@
   }
 
   .menu-corner__btn {
-    margin: 1.5% 0 0 0;
+    margin: 8% 0 0 0;
   }
 
   .menu-corner__btn > span,
@@ -1630,7 +1630,7 @@
     flex-flow: wrap;
     align-items: center;
     width: 66vw;
-    height: 26vh;
+    height: 263px;
     margin-bottom: 4%;
   }
 
@@ -1680,10 +1680,9 @@
     text-align: center;
     margin: 0 0 0 9%;
     width: 20vw;
-    height: 2vh;
     color: #e51937;
     text-shadow: none;
-    padding: 2% 0% 3% 9%;
+    padding: 2% 0% 2% 9%;
     letter-spacing: 0.05em;
     font: 700 16px/19px 'montserratbold', arial, helvetica, sans-serif;
     background: url(img/wheelred.svg) no-repeat 0% 30%;
@@ -1835,7 +1834,7 @@
     text-align: left;
     width: 93.5vw;
     height: auto;
-    margin: 70% 0 0 0;
+    margin: 70.5% 0 0 0;
     padding: 8% 2% 8.5% 4.5%;
   }
 
@@ -1866,7 +1865,7 @@
   .safety__details {
     justify-content: center;
     width: 100%;
-    height: 68vh;
+    height: 705px;
     background: url(img/backmodel.svg) no-repeat 53% 12%;
     background-size: 76vw;
   }
@@ -2119,7 +2118,7 @@
     flex-flow: wrap;
     align-items: center;
     width: 85vw;
-    height: 21vh;
+    height: 169px;
     margin: auto;
     margin-bottom: 3%;
   }
@@ -2161,6 +2160,7 @@
 
   .main__undercar-distance_savings {
     font: 400 10px/16px 'montserrat', arial, helvetica, sans-serif;
+    width: 17vw;
   }
 
   .main__undercar-drive {
@@ -2264,13 +2264,13 @@
 
   .safety__details {
     justify-content: center;
-    height: 73vh;
-    background: url(img/backmodel.svg) no-repeat 0% 9%;
+    height: 550px;
+    background: url(img/backmodel.svg) no-repeat 0% 10%;
     background-size: 107vw;
   }
 
   .safety__details-car {
-    background: url(img/car-frame-iphone.svg) no-repeat 8% 15%;
+    background: url(img/car-frame-iphone.svg) no-repeat 8% 17%;
     background-size: 96vw;
   }
 
