@@ -1652,7 +1652,7 @@
     padding: 0 0 0 19%;
     font: 600 50px/58px 'montserratsemibold', arial, helvetica, sans-serif;
     background: url(img/clock.svg) no-repeat 3% 150%;
-    background-size: 9vh;
+    background-size: 6vh;
   }
 
   .main__undercar-speed_sec {
